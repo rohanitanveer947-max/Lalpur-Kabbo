@@ -1,12 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="bn">
 <head>
-    <title>Lalpur Kabbo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>লালপুর কাব্য - মিউজিক প্ল্যাটফর্ম</title>
+    <style>
+        body { background-color: #0d0d1f; color: #f0c65e; font-family: 'Segoe UI', sans-serif; text-align: center; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: auto; background: #1a1a2e; padding: 30px; border-radius: 20px; border: 2px solid #f0c65e; box-shadow: 0 0 25px rgba(240, 198, 94, 0.2); }
+        h1 { color: #f0c65e; }
+        textarea { width: 90%; height: 120px; padding: 15px; margin: 15px 0; border-radius: 10px; border: 1px solid #f0c65e; background: #0d0d1f; color: white; font-size: 16px; }
+        input { width: 90%; padding: 15px; margin: 10px 0; border-radius: 10px; border: 1px solid #f0c65e; background: #0d0d1f; color: white; }
+        button { background: #f0c65e; color: #0d0d1f; padding: 15px 40px; border: none; border-radius: 30px; font-weight: bold; cursor: pointer; font-size: 18px; margin-top: 10px; }
+        .result { margin-top: 25px; padding: 20px; border-top: 1px solid #f0c65e; color: #fff; }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Lalpur Kabbo</h1>
-    <p>This is your premium music creation platform.</p>
-    <button onclick="alert('Recording feature coming soon!')">Start Recording</button>
+
+<div class="container">
+    <h1>লালপুর কাব্য</h1>
+    <p>আপনার লিরিক্স থেকে গান তৈরি করুন</p>
+    <textarea id="lyrics" placeholder="গানের কথা (Lyrics) এখানে লিখুন..."></textarea>
+    <input type="text" id="style" placeholder="মিউজিকের স্টাইল (যেমন: বাউল, ফোক, তবলা)">
+    <br>
+    <button onclick="createSong()">গান তৈরি করুন</button>
+    <div class="result" id="output">অডিও জেনারেশন প্রস্তুত</div>
+</div>
+
+<script>
+    function createSong() {
+        const lyrics = document.getElementById('lyrics').value;
+        const style = document.getElementById('style').value;
+        if(lyrics && style) {
+            document.getElementById('output').innerHTML = "<h3>গান তৈরি হচ্ছে...</h3><p>স্টাইল: " + style + "</p><p>আপনার দেওয়া কথাগুলো নিয়ে মিউজিক তৈরি হচ্ছে, অনুগ্রহ করে অপেক্ষা করুন।</p>";
+        } else {
+            alert("অনুগ্রহ করে লিরিক্স এবং মিউজিকের ধরন লিখুন!");
+        }
+    }
+</script>
+
 </body>
 </html>
-
